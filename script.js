@@ -4,6 +4,7 @@ const loader = document.getElementById('loader');
 const divImages = document.querySelector('.div-images');
 const link = 'https://dog.ceo/api/breeds/image/random/';
 
+
 /* 
 ЧУТЬ ПОМЕНЯЛ КОД ЧТОБЫ ЮЗЕР МОГ САМ ВЫБИРАТЬ КОЛИЧЕСТВО КАРТИНОК, ВЫВОДЯЩИХСЯ НА СТРАНИЦУ
 ДУМАЮ ЭТО ПРИКОЛЬНО
@@ -21,8 +22,8 @@ async function createArray () {
         if (!response.ok || number < 5 || number > 50) {
             throw new Error('Ошибка при загрузке изображений или введено число не из заданного диапозона!');
         } else {
-        const data = await response.json();
-        const images = data.message;
+            const data = await response.json();
+            const images = data.message;
         
         btnClick(images);
         };
@@ -39,8 +40,7 @@ function btnClick (arr) {
     arr.forEach(elem => {
         const image = document.createElement('img');
         image.src = elem;
-        image.style.cssText = 'width: 100%; max-height: 264px; object-fit: cover; border-radius: 5%';
-        
+        image.style.cssText = 'width: 100%; max-height: 264px; object-fit: cover; border-radius: 4%';
         divImages.appendChild(image);
     });
 };
