@@ -1,0 +1,115 @@
+/* ОБЩИЙ СТИЛЬ */
+* {
+    box-sizing: border-box;
+    color: #464646;
+    font-family: Arial, sans-serif;
+}
+
+*::selection {
+    color: rgb(93, 186, 223);
+    background-color: bisque;
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.div-zag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* СТИЛИЗАЦИЯ КНОПКИ */
+.btn {
+    margin: 2px auto;
+    padding: 0;
+    width: 200px;
+    height: 48px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 700;
+    line-height: 24px;
+    font-size: 16px;
+    text-align: center;
+    color: rgb(134, 94, 20);
+    background-color: rgba(30, 204, 160, 0.7);
+    box-shadow: 0 0 5px rgb(168, 107, 14);
+
+    &:hover {
+        box-shadow: 0 0 8px rgb(140, 10, 201);
+    }
+    &:active {
+        box-shadow: 0 0 12px rgb(201, 10, 10);
+        width: 208px;
+        height: 50px;
+        margin: 1px auto;
+    }
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+/* СТИЛИЗАЦИЯ КАРТИНОК */
+.div-images {
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    display: grid;
+    width: 314px;
+    grid-template-columns: 1fr;
+    
+    gap: 5px;
+    overflow: hidden;
+}
+
+/* АДАПТИВ */
+@media screen and (min-width: 414px) {
+    .div-images {
+        width: 394px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .div-images {
+        width: 728px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .div-images {
+        width: 984px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .div-images {
+        width: 1400px;
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+#loader {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    background-color: azure;
+}
+.text {
+    color: blueviolet;
+}
